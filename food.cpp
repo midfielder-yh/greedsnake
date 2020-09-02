@@ -18,7 +18,7 @@ void Food::DrawFood( Snake&s)
 		bool flag = false;
 		for (auto& point : s.snake)
 		{
-			if ((point.GetX() == tmpx && point.GetY() == tmpy) || (tmpx == f_x && tmpy == f_y)) {//é˜²æ­¢é£Ÿç‰©ä¸è›‡èº«é‡å 
+			if ((point.GetX() == tmpx && point.GetY() == tmpy) || (tmpx == f_x && tmpy == f_y)) {//·ÀÖ¹Ê³ÎïÓëÉßÉíÖØµş
 				flag = true;
 				break;
 			}
@@ -28,7 +28,7 @@ void Food::DrawFood( Snake&s)
 		x = tmpx;
 		y = tmpy;
 		SetCursorPosition(x, y);
-		cout << "â˜…"; //æ™®é€šé£Ÿç‰©
+		cout << "¡ï"; 
 		cnt++;
 		if (cnt == 2)
 		{
@@ -60,7 +60,7 @@ void Food::DrawFlashFood( Snake&s)
 		f_y = tmpy;
 		SetCursorPosition(f_x, f_y);
 		SetColor(18);
-		cout << "â– "; //ç‰¹æ®Šé£Ÿç‰©
+		cout << "¡ö"; 
 		f_needflash = true;
 		f_flash = true;
 		break;
@@ -77,10 +77,10 @@ void Food::Count()
 	}
 	else
 	{
-		cout << "â– ";
+		cout << "¡ö";
 		f_flash = false;
 	}
-		--count;//é—ªçƒæ—¶é—´å€’è®¡æ—¶
+		--count;//ÉÁË¸Ê±¼äµ¹¼ÆÊ±
 	if (count == 0)
 	{
 		SetCursorPosition(f_x, f_y);
