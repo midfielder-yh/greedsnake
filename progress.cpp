@@ -138,7 +138,7 @@ int Progress::Game()
     initfood->DrawFood(s);
     while (s.Edge()&&s.HitItself())
     {
-        Sleep(100);
+        Sleep(speed);
         if (s.ChangeDirection()) {
             if (s.GetFood(*initfood))
             {
