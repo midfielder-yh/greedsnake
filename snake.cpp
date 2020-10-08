@@ -6,7 +6,7 @@
 #include<Windows.h>
 #include<iostream>
 using namespace std;
-void Snake::InitSnake()//³õÊ¼»¯Éß
+void Snake::InitSnake()//åˆå§‹åŒ–è›‡
 {
 	for (auto& point : snake)
 	{
@@ -30,13 +30,13 @@ void Snake::Eat()
 		break;
 	}
 	SetColor(14);
-	snake.back().PrintCircular();//´òÓ¡ÉßÍ·
+	snake.back().PrintCircular();//æ‰“å°è›‡å¤´
 }
 void Snake::NormalMove()
 {
 	    Eat();
-		snake.front().Erase(); //È¥µôÉßÎ²
-		snake.pop_front();//µ¯³öÉßÎ²
+		snake.front().Erase(); //å»æ‰è›‡å°¾
+		snake.pop_front();//å¼¹å‡ºè›‡å°¾
 		/*Sleep(p.speed);*/
 }
 bool Snake::ChangeDirection()
@@ -48,16 +48,16 @@ bool Snake::ChangeDirection()
 		ch = _getch();
 		switch (ch)
 		{
-		case 72://ÉÏ
+		case 72://ä¸Š
 			if (direction != Direction::DOWN)
 				direction = Direction::UP; break;
-		case 80://ÏÂ
+		case 80://ä¸‹
 			if (direction != Direction::UP)
 				direction = Direction::DOWN;  break;
-		case 75://×ó
+		case 75://å·¦
 			if (direction != Direction::RIGHT)
 				direction = Direction::LEFT;  break;
-		case 77://ÓÒ
+		case 77://å³
 			if (direction != Direction::LEFT)
 				direction = Direction::RIGHT;  break;
 		case 27://ESC
@@ -91,13 +91,13 @@ bool  Snake::Edge()
 	return snake.back().GetX() < 30 &&
 		snake.back().GetY() < 30 &&
 		snake.back().GetX() > 1 &&
-		snake.back().GetY() > 1;;
+		snake.back().GetY() > 1;
 }
-bool Snake::HitItself()//×²µ½×ÔÉí
+bool Snake::HitItself()//æ’åˆ°è‡ªèº«
 {
 	int a = 0;
 	Point head = Point(snake.back().GetX(), snake.back().GetY());
-	for (auto& point : snake) //Èç¹ûÕûÌõÉßÖĞÓëÉßÍ·ÏàÍ¬µÄ×ø±ê¸öÊı´óÓÚ1£¬Ôò×Ô×²
+	for (auto& point : snake) //å¦‚æœæ•´æ¡è›‡ä¸­ä¸è›‡å¤´ç›¸åŒçš„åæ ‡ä¸ªæ•°å¤§äº1ï¼Œåˆ™è‡ªæ’
 	{
 			if ((point.GetX() == head.GetX()) && (point.GetY() == head.GetY())) {
 				a++;
