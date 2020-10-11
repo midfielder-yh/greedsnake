@@ -2,18 +2,18 @@
 #include"windowdesign.h"
 #include<iostream>
 using namespace std;
-void Point::Print()//Êä³ö·½¿é
+void Point::Print()//è¾“å‡ºæ–¹å—
 {
     SetCursorPosition(x, y);
-    cout << "¡ö";
+    cout << "â– ";
 }
-void Point::Erase()//²Á³ı·½¿é
+void Point::Erase()//æ“¦é™¤æ–¹å—
 {
     SetCursorPosition(x, y);
-    cout << " ";
+    cout << "  ";//æ³¨æ„è¿™é‡Œæ˜¯ä¸¤ä¸ªç©ºæ ¼
 }
-void Point::PrintCircular()//Êä³öÔ²ĞÎ
+void Point::PrintCircular()//è¾“å‡ºåœ†å½¢
 {
     SetCursorPosition(x, y);
-    std::cout << "¡ñ";
+    std::cout << "â—";
 }
