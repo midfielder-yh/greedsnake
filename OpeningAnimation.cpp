@@ -1,7 +1,7 @@
 #include"OpeningAnimation.h"
 #include<Windows.h>
 #include"windowdesign.h"
-void OpeningAnimation::PrintFirst()//ÀàµÄË½ÓĞ³ÉÔ±¿ÉÒÔ¿¿³ÉÔ±º¯Êı·ÃÎÊ
+void OpeningAnimation::PrintFirst()//ç±»çš„ç§æœ‰æˆå‘˜å¯ä»¥é æˆå‘˜å‡½æ•°è®¿é—®
 {
     for (auto& point : startsnake)
     {
@@ -9,29 +9,27 @@ void OpeningAnimation::PrintFirst()//ÀàµÄË½ÓĞ³ÉÔ±¿ÉÒÔ¿¿³ÉÔ±º¯Êı·ÃÎÊ
         Sleep(speed);
     }
 }
-void OpeningAnimation::PrintSecond()//Éß´Ó×óÏòÓÒÒÆ¶¯µÄ¹ı³Ì
+void OpeningAnimation::PrintSecond()//è›‡ä»å·¦å‘å³ç§»åŠ¨çš„è¿‡ç¨‹
 {
-    for (int i = 10,j=14; i != 40; ++i) //ÉßÍ·ĞèÒª´Ó10ÒÆ¶¯µ½40
+    for (int i = 10,j=14; i != 40; ++i) //è›‡å¤´éœ€è¦ä»10ç§»åŠ¨åˆ°40
     {
-        /*¼ÆËãÉßÍ·µÄÏÂÒ»¸öÎ»ÖÃ£¬²¢½«ÆäÑ¹ÈëstartsnakeÖĞ£¬»æÖÆ³öÀ´£¬½«ÉßÎ²È¥µô*/
+        /*è®¡ç®—è›‡å¤´çš„ä¸‹ä¸€ä¸ªä½ç½®ï¼Œå¹¶å°†å…¶å‹å…¥startsnakeä¸­ï¼Œç»˜åˆ¶å‡ºæ¥ï¼Œå°†è›‡å°¾å»æ‰*/
         int x = i / 5; 
         if (x % 2 == 0)++j;
         else --j;
         startsnake.emplace_back(Point(i, j));
-        startsnake.back().Print();//´òÓ¡ÉßÍ·
-        startsnake.front().Erase();//È¥µôÉßÎ²
-        startsnake.pop_front();//µ¯³öÉßÎ²
+        startsnake.back().Print();//æ‰“å°è›‡å¤´
+        startsnake.front().Erase();//å»æ‰è›‡å°¾
+        startsnake.pop_front();//å¼¹å‡ºè›‡å°¾
         Sleep(speed);
     }
 }
 void OpeningAnimation::PrintThird()
 {
     while (!startsnake.empty()) {
-        if (!startsnake.empty()) //Èç¹ûÉß»¹Ã»ÏûÊ§£¬¼ÌĞøÒÆ¶¯
-        {
+        //å¦‚æœè›‡è¿˜æ²¡å®Œå…¨æ¶ˆå¤±ï¼Œç»§ç»­å¼¹å‡ºè›‡å°¾ 
             startsnake.front().Erase();
             startsnake.pop_front();
-        }
         Sleep(speed);
     }
 }
@@ -41,5 +39,5 @@ void OpeningAnimation::Action()
     PrintSecond();
     PrintThird();
     SetCursorPosition(20,30);
-    //cout << "°´ÈÎÒâ¼ü¿ªÊ¼ÓÎÏ·";
+    //cout << "æŒ‰ä»»æ„é”®å¼€å§‹æ¸¸æˆ";
 }
